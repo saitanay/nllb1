@@ -12,6 +12,7 @@ import time
 
 import flask
 from flask import Flask, request, send_from_directory, Blueprint
+from flask_ngrok import run_with_ngrok
 import transformers
 from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 
@@ -25,6 +26,7 @@ DEF_TGT_LNG = 'kan_Knda'
 FLOAT_POINTS = 4
 exp = None
 app = Flask(__name__)
+run_with_ngrok(app)
 app.config['JSON_AS_ASCII'] = False
 
 bp = Blueprint('nmt', __name__, template_folder='templates', static_folder='static')
