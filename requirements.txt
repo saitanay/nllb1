@@ -1,4 +1,7 @@
-transformers==4.21
+transformers>=4.21
+torch>=1.12
+gunicorn
+gevent
 Flask
 torch
 pyngrok
