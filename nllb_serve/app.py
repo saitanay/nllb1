@@ -46,10 +46,12 @@ try:
     #torch.set_grad_enabled(False)
     sys_info['torch']: torch.__version__
     if torch.cuda.is_available():
+        log.info("CUDA is AVAILABLE")
         sys_info['GPU'] = str(torch.cuda.get_device_properties())
         sys_info['Cuda Version'] = torch.version.cuda
     else:
         log.warning("CUDA unavailable")
+        log.info("CUDA is UNAVAILABLE")
 except:
     pass
 
@@ -186,7 +188,7 @@ if cli_args.get('base'):
 def main():
     log.info(f"System Info: ${sys_info}")
     # CORS(app)  # TODO: insecure
-    app.run(port=cli_args["port"], host=cli_args["host"])
+    app.run()
     # A very useful tutorial is found at:
     # https://www.digitalocean.com/community/tutorials/how-to-make-a-web-application-using-flask-in-python-3
 
