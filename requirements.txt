@@ -1,5 +1,6 @@
 transformers==4.21
-Flask==2.1
-torch==1.12
-pyngrok==6.0.0
+Flask
+torch
+pyngrok
 flask_ngrok
+torchvision
