@@ -4,6 +4,4 @@ gunicorn
 gevent
 Flask
 torch
-pyngrok
-flask_ngrok
 torchvision
